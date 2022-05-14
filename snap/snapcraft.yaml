@@ -1,6 +1,6 @@
 name: swed
 version: 'git' # just for humans, typically '1.2+git' or '1.3.2'
-summary: swed # 79 char long summary
+summary: Swanky Text Editor. # 79 char long summary
 description: |
   Swanky Text Editor.
 
@@ -13,6 +13,8 @@ architectures:
   - build-on: amd64
     run-on: all
 
+stage-snaps:
+  - gamecake
 
 parts:
 
@@ -34,7 +36,7 @@ apps:
 
 
 slots:
-  cakes:
+  swed:
     interface: content
     read: 
       - swed
