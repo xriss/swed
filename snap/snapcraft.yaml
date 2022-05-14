@@ -13,9 +13,6 @@ architectures:
   - build-on: amd64
     run-on: all
 
-stage-snaps:
-  - gamecake
-
 parts:
 
   swed:
@@ -27,7 +24,10 @@ parts:
     override-build: |
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       cp swed $SNAPCRAFT_PART_INSTALL/bin/swed
-    
+
+    stage-snaps:
+      - gamecake
+
 apps:
 
   swed:
