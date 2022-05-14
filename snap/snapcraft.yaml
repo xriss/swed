@@ -22,7 +22,7 @@ parts:
       cp swed $SNAPCRAFT_PART_INSTALL/bin/swed
 
     stage-snaps:
-      - gamecake
+      - gamecake/latest/edge
 
 apps:
 
