@@ -11,6 +11,21 @@ base: core20
 
 parts:
 
+  desktop-glib-only:
+  
+    build-packages:
+      - libglib2.0-dev
+    
+    plugin: make
+    
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    
+    source-subdir: glib-only
+    
+    stage-packages:
+      - libglib2.0-bin
+
+
   swed:
 
     plugin: make
@@ -19,7 +34,6 @@ parts:
 
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
-      cp swed $SNAPCRAFT_PART_INSTALL/bin/swed
 
     stage-snaps:
       - gamecake/latest/edge
@@ -28,7 +42,7 @@ apps:
 
   swed:
 
-    command: desktop-launch gamecake -lcmd -- swed
+    command: bin/desktop-launch gamecake -lcmd -- swed
 
     plugs:
       - home
