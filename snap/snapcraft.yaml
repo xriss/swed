@@ -35,12 +35,14 @@ parts:
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
 
+    stage-snaps:
+      - gamecake/latest/edge
 
 apps:
 
   swed:
 
-    command: bin/desktop-launch gamecake.swed
+    command: bin/desktop-launch gamecake -lcmd -- swed
 
     plugs:
       - home
